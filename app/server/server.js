@@ -1,3 +1,5 @@
+import { _ } from 'meteor/underscore'
+
 var KEEPALIVE_TIMEOUT_SECONDS = 15;
 // Collections //////////////////////////////////////////////////////////////////////////////////////////
 AppSettings = new Meteor.Collection("appsettings");

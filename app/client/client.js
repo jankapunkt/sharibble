@@ -1,8 +1,8 @@
 var IMAGE_URL_REGEX = /https?:\/\/\S+\.(jpe?g|gif|png)/ig;
 var DEFAULT_IMAGE_URL = "/img/default.png";
 var KEEPALIVE_INTERVAL_MILLISECONDS = 7000;
-
-Session.set("userGuid", Meteor.uuid())
+import { Random } from 'meteor/random'
+Session.set("userGuid", Random.id())
 
 // Startup ///////////////////////////////////////////////////////////////////////////////////////////////
 Meteor.startup(function() {
@@ -179,7 +179,7 @@ function processNewChatMessage(message) {
         message: message,
         userGuid: Session.get("userGuid")
     });
-
+debugger
     var imageUrl = findImageUrl(message);
     if (imageUrl) {
         var lastestImageUrl = AppSettings.findOne({
